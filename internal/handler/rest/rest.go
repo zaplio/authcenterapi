@@ -69,7 +69,6 @@ func (rs *Rest) registerRoutes(router *gin.Engine) {
 			auth.POST("/forgot-password", rs.ForgotPassword)
 			auth.POST("/reset-password", rs.ResetPassword)
 			auth.POST("/verify-email", rs.VerifyEmail)
-			auth.POST("/send-email-verification", rs.ResendEmailVerification)
 
 			// OAuth routes
 			auth.POST("/google", rs.LoginWithGoogle)
@@ -88,6 +87,7 @@ func (rs *Rest) registerRoutes(router *gin.Engine) {
 				user.POST("/logout", rs.Logout)
 				user.POST("/logout-all", rs.LogoutAll)
 				user.GET("/permissions", rs.GetUserPermissions)
+				user.POST("/resend-verification", rs.ResendEmailVerification)
 			}
 
 			// Token management

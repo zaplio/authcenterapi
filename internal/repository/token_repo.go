@@ -147,7 +147,7 @@ func (r *tokenRepo) UpdateLastUsed(ctx context.Context, tokenID uuid.UUID, ipAdd
 		return err
 	}
 
-	r.logger.Debugfctx(provider.AppLog, ctx, "Token last used updated", "token_id", tokenID, "ip", ipAddress)
+	r.logger.Debugfctx(provider.AppLog, ctx, "Token last used updated token_id %s, ip %s", tokenID, ipAddress)
 	return nil
 }
 
