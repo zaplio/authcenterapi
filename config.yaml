@@ -1,0 +1,41 @@
+server:
+  port: 8080
+  shutdown_timeout: 10s
+  
+logger:
+  dir: /var/log                                  # DO NOT EDIT!
+  file_name: authcenterapi
+  max_backups: 0                            # set 0 for unlimited backups
+  max_size: 10                              # in mb
+  max_age: 90                               # in days, set 0 for unlimited days
+  compress: true
+  local_time: true
+  level: debug                              # debug, info, warn, error: true
+
+postgres:
+  host: sgp.domcloud.co
+  port: 5432
+  username: trusty-employ-cav
+  password: wkc(Aw9K8H)_4Tm8T6
+  database: trusty_employ_cav_db
+  options:
+    - sslmode=disable
+
+redis:
+  host: 172.26.90.92
+  port: 6379
+  username: 
+  password: 
+  database: 0
+
+amqp:
+  scheme: "amqp"
+  host: localhost
+  port: 5672
+  username: guest
+  password: guest
+  concurrent: 10 # number of concurrent consumers per queue, number must be <= prefetch_count
+  prefetch_count: 10
+  prefetch_size: 0
+  global: false
+  concurrency: 10
